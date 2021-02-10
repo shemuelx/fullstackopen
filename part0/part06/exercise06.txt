@@ -1,0 +1,16 @@
+language: uml
+author: Samuel Felipe Mosquera
+
+title Exercise 0.6
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa {"content":"samuka","date":"2021-02-10T14:29:58.782Z"}
+
+note left of browser
+browser renders new-note
+end note
+
+server-->browser: {"message":"note created"}
+
+note left of browser
+browser logs JSON-file
+end note

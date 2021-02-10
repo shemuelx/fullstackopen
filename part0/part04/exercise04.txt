@@ -1,0 +1,67 @@
+language: uml
+author: Samuel Felipe Mosquera
+
+title Exercise 0.4 NewNote
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note right of server
+/exampleapp/notes
+end note
+
+server-->browser: HTML-code
+
+note left of browser
+browser renders HTML-code
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+note right of server
+/exampleapp/main.css
+end note
+
+server-->browser: main.css
+
+note left of browser
+browser executes CSS-code
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+
+note right of server
+/exampleapp/main.js
+end note
+
+server-->browser: main.js
+
+note left of browser
+browser executes JS-code 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+note right of server
+/exampleapp/data.json
+end note
+note right of server
+last JSON-file with the last new_note created content
+end note
+
+server-->browser: [{"content":"Samuka","date":"2021-02-08T20:02:26.996Z"}]
+
+note left of browser:
+browser renders the JSON file
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+
+note right of server
+/favicon.ico
+end note
+
+server-->browser: HTML-code
+
+note left of browser:
+browser renders HTML-code
+end note
